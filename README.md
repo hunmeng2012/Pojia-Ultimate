@@ -238,6 +238,6 @@ A：能，群里提供权重与部署脚本指引；懒得折腾就用中转站�
 
 **Star ⭐ 一下，让更多人找到出口。**
 
-[官网](https://www.hunmeng.icu/) · [QQ群](https://qm.qq.com/q/1109964876) · [问题反馈](https://github.com/你的用户名/Pojia-Ultimate/issues)
+[官网](https://www.hunmeng.icu/) · [QQ群](https://qm.qq.com/q/1109964876) · [推广文案包](./PROMO.md) · [接入指南](./docs/接入指南.md)
 
 </div>

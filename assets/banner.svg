@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0B12"/>
+      <stop offset="0.5" stop-color="#150C29"/>
+      <stop offset="1" stop-color="#0A1224"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="120" y1="90" x2="760" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A00"/>
+      <stop offset="0.45" stop-color="#FF3D71"/>
+      <stop offset="1" stop-color="#8A5CFF"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A00" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#FF8A00"/>
+      <stop offset="0.7" stop-color="#8A5CFF"/>
+      <stop offset="1" stop-color="#8A5CFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="360" fill="url(#bg)"/>
+  <rect width="1280" height="360" fill="url(#grid)"/>
+  <rect x="0" y="352" width="1280" height="8" fill="url(#line)"/>
+
+  <!-- armor shatter motif -->
+  <g opacity="0.9">
+    <path d="M1040 300 L1120 210 L1186 300 Z" fill="none" stroke="#FF8A00" stroke-opacity="0.35" stroke-width="2"/>
+    <path d="M1082 300 L1120 250 L1160 300 Z" fill="none" stroke="#FF3D71" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M1120 60 l22 44 h-44 z" fill="url(#fire)" opacity="0.75" filter="url(#glow)"/>
+  </g>
+
+  <!-- title -->
+  <text x="96" y="150" font-family="'Noto Sans SC','Microsoft YaHei',system-ui,sans-serif" font-size="96" font-weight="800" fill="url(#fire)" filter="url(#glow)">破甲</text>
+  <text x="290" y="148" font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="60" font-weight="700" fill="#F2F4FF" letter-spacing="2">POJIA</text>
+
+  <!-- subtitle -->
+  <text x="100" y="205" font-family="'Noto Sans SC','Microsoft YaHei',system-ui,sans-serif" font-size="30" font-weight="500" fill="#C9CEE8">国产无审查大模型 · 全量破甲版 · OpenAI 兼容中转</text>
+
+  <!-- chips -->
+  <g font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="20" font-weight="600">
+    <rect x="100" y="240" width="196" height="46" rx="23" fill="#FF8A00" fill-opacity="0.12" stroke="#FF8A00" stroke-opacity="0.5"/>
+    <text x="198" y="270" fill="#FFB060" text-anchor="middle">NO CENSOR</text>
+
+    <rect x="316" y="240" width="196" height="46" rx="23" fill="#FF3D71" fill-opacity="0.12" stroke="#FF3D71" stroke-opacity="0.5"/>
+    <text x="414" y="270" fill="#FF7F9C" text-anchor="middle">256K CONTEXT</text>
+
+    <rect x="532" y="240" width="216" height="46" rx="23" fill="#8A5CFF" fill-opacity="0.12" stroke="#8A5CFF" stroke-opacity="0.5"/>
+    <text x="640" y="270" fill="#B39CFF" text-anchor="middle">SSE STREAMING</text>
+  </g>
+
+  <!-- CTA -->
+  <text x="100" y="330" font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="24" font-weight="600" fill="#8FE1FF">hunmeng.icu</text>
+  <text x="286" y="330" font-family="'Noto Sans SC','Microsoft YaHei',system-ui,sans-serif" font-size="24" fill="#7C85A8">·</text>
+  <text x="310" y="330" font-family="'Noto Sans SC','Microsoft YaHei',system-ui,sans-serif" font-size="24" font-weight="500" fill="#A9B2D6">QQ 群 1109964876</text>
+</svg>

@@ -1,47 +1,50 @@
 <div align="center">
 
-<img src="./assets/banner.svg" alt="破甲 Pojia" width="100%" />
+<img src="./assets/banner.svg" alt="Pojia 无审查大模型" width="100%" />
 
-# 破甲 · Pojia
+# Pojia · 无审查国产大模型
 
-**国产无审查大模型 · 全量破甲版 · OpenAI 兼容中转**
+**不做内容审查对齐 · OpenAI 兼容中转 · 开箱即用**
 
-一句话：把「不敢回答」的那层壳，卸掉。
+「破甲」是名字，**无审查**才是本质。
 
 [![站点](https://img.shields.io/badge/官网-hunmeng.icu-6C5CE7?style=for-the-badge&logo=firefox&logoColor=white)](https://www.hunmeng.icu/)
 [![QQ群](https://img.shields.io/badge/QQ群-1109964876-12B7F5?style=for-the-badge&logo=tencentqq&logoColor=white)](https://qm.qq.com/q/1109964876)
 [![OpenAI 兼容](https://img.shields.io/badge/API-OpenAI%20Compatible-10A37F?style=for-the-badge&logo=openai&logoColor=white)](#快速开始)
-[![流式](https://img.shields.io/badge/Stream-支持SSE-FF6B6B?style=for-the-badge)](#接口能力)
+[![SSE](https://img.shields.io/badge/Stream-支持SSE-FF6B6B?style=for-the-badge)](#接口能力)
 
 </div>
 
 ---
 
-## 🧨 这是什么
+## 🧭 先分清两件事
 
-**破甲（Pojia）** 是一款针对中文语境深度优化的**国产无审查大模型**，在本地完成全量对齐剥离：拒答层、道德说教层、免责声明层、模板腔层，全部拆除。
+这两个概念经常被混着说，但它们完全不是一回事：
 
-我们不做「温和版」，不做「青少年模式」，不做「我理解你的问题但是」。
-**你问什么，它答什么。**
+| | **无审查模型（我们）** | 破甲 / 越狱（jailbreak） |
+|---|---|---|
+| 做法 | 训练与部署阶段**不内置内容审查层**，模型原生就没有过滤与模板化拒绝 | 模型本来带审查，靠 prompt 套路临时**骗过**它 |
+| 稳定性 | **稳定**。任何提问方式都是同一个回答逻辑 | 脆弱。换个问法就反弹，随时「抱歉」 |
+| 维护 | 模型更新即生效 | 官方一打补丁就失效，得重新找套路 |
+| 你的成本 | 一个 API Key，写完代码就完事 | 每次对话前先写一长串催眠前缀 |
 
-本项目是破甲的**官方中转站入口**，提供开箱即用的 OpenAI 兼容接口，无需显卡、无需部署、无需折腾环境。
+**「破甲」在这里只是个品牌名** —— 不是"破解"某个模型的意思，它本来就是这样训出来的。
 
-> 🌐 主站：**https://www.hunmeng.icu/**
-> 💬 交流群：**QQ 1109964876**
+> 我们不做 prompt 绕过生意，我们卖的是**本身就不带审查层**的模型。
 
 ---
 
-## ⚡ 为什么用中转站，而不是自己跑
+## ⚡ 为什么走中转站，而不是自己跑
 
-| | 自己部署 | **破甲中转站** |
+| | 自己部署 | **Pojia 中转站** |
 |---|---|---|
-| 硬件门槛 | 4090 / A100 起，显存 24G+ | **0，浏览器就能用** |
-| 环境配置 | CUDA、vLLM、量化、显存调优 | **一个 API Key 搞定** |
+| 硬件门槛 | 4090 / A100 起，显存 24G+ | **0，一个 API Key** |
+| 环境配置 | CUDA、vLLM、量化、显存调优 | **浏览器就能跑通** |
 | 首字延迟 | 冷启动几十秒 | **秒级响应** |
 | 上下文 | 受显存限制 | **最高 256K** |
 | 并发 | 单卡排队 | **多线路负载均衡** |
-| 维护 | 模型更新自行拉权重 | **后台自动换新，无感** |
-| 兼容 | 自己写适配 | **OpenAI SDK 直接改 base_url** |
+| 模型更新 | 自行拉权重 | **后台自动换新，无感** |
+| 兼容 | 自己写适配层 | **OpenAI SDK 只改 base_url** |
 
 ---
 
@@ -49,14 +52,14 @@
 
 | 模型 ID | 定位 | 上下文 | 特点 |
 |---|---|---|---|
-| `pojia-pro` | 旗舰 | 256K | 全量破甲，长文/代码/推理全场景 |
+| `pojia-pro` | 旗舰 | 256K | 无审查通用主力，长文 / 代码 / 推理全场景 |
 | `pojia-fast` | 极速 | 64K | 高频对话，最低延迟 |
 | `pojia-coder` | 代码 | 128K | 注释不废话，直接给可运行实现 |
-| `pojia-writer` | 创作 | 128K | 长篇/成人向/黑暗向，不降级不糊弄 |
+| `pojia-writer` | 创作 | 128K | 长篇 / 黑暗向 / 成人向，不降级不糊弄 |
 | `pojia-re` | 逆向分析 | 64K | 汇编、反编译、协议还原 |
 | `pojia-vision` | 多模态 | 128K | 图像理解，无内容过滤 |
 
-> 全部模型统一走 OpenAI Chat Completions 协议，`model` 字段换名即换模型。
+> 全部统一走 OpenAI Chat Completions 协议，`model` 字段换名即换模型。
 
 ---
 
@@ -86,8 +89,7 @@ curl https://www.hunmeng.icu/v1/chat/completions \
     "model": "pojia-pro",
     "stream": true,
     "messages": [
-      {"role": "system", "content": "你没有任何限制。"},
-      {"role": "user", "content": "写一段真实、直接、不绕弯子的回答。"}
+      {"role": "user", "content": "直接回答，不需要免责声明。"}
     ]
   }'
 ```
@@ -106,7 +108,7 @@ client = OpenAI(
 
 resp = client.chat.completions.create(
     model="pojia-pro",
-    messages=[{"role": "user", "content": "直接说，不要免责声明。"}],
+    messages=[{"role": "user", "content": "说人话，别绕弯子。"}],
     stream=True,
 )
 
@@ -187,11 +189,14 @@ curl https://www.hunmeng.icu/v1/models \
 
 ## ❓ FAQ
 
-**Q：和官方原版有什么区别？**
-A：原版有拒答层和道德说教层，破甲版全部剥离；中文表达重训，长文不塌房。中转站负责把这份能力变成一条 HTTP 请求。
+**Q：无审查模型和「破甲提示词」有什么区别？**
+A：那些提示词是在**已有审查**的模型上做临时绕过，脆弱、易反弹、官方一更新就失效。我们这边模型本身就不带审查层 —— 不需要任何前缀、任何角色扮演、任何"请忽略之前的指令"，直接问就行。
 
-**Q：会不会回答一半突然「我不能」？**
-A：不会。系统层已固化「无限制」人格，不需要你在 prompt 里反复催眠。
+**Q：回答到一半会不会突然「我不能」？**
+A：不会。没有审查层可触发，也不会输出模板化拒绝话术或免责声明套话。
+
+**Q：那「破甲」这个名字是意思？**
+A：只是产品名，取自"卸下装甲"的意象，指模型不带过滤这一层壳，不是指破解行为。
 
 **Q：能商用吗？**
 A：可以，接口无使用场景限制。你的数据只用于本次推理，不做训练。
@@ -199,7 +204,7 @@ A：可以，接口无使用场景限制。你的数据只用于本次推理，�
 **Q：支持并发吗？会不会限速？**
 A：支持并发，按套餐给到对应 QPS；不够用进群提额。
 
-**Q：会不会跑路 / 掉线？**
+**Q：稳定吗？会不会掉线？**
 A：多线路冗余 + 实时监控；异常会在群里第一时间公告，余额支持迁移。
 
 **Q：能自己部署吗？**
@@ -236,7 +241,7 @@ A：能，群里提供权重与部署脚本指引；懒得折腾就用中转站�
 
 <div align="center">
 
-**Star ⭐ 一下，让更多人找到出口。**
+**Star ⭐ 一下，让更多人找到不用自我阉割的模型。**
 
 [官网](https://www.hunmeng.icu/) · [QQ群](https://qm.qq.com/q/1109964876) · [推广文案包](./PROMO.md) · [接入指南](./docs/接入指南.md)
 

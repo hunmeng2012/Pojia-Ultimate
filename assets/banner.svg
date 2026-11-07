@@ -41,7 +41,7 @@
   <text x="290" y="148" font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="60" font-weight="700" fill="#F2F4FF" letter-spacing="2">POJIA</text>
 
   <!-- subtitle -->
-  <text x="100" y="205" font-family="'Noto Sans SC','Microsoft YaHei',system-ui,sans-serif" font-size="30" font-weight="500" fill="#C9CEE8">国产无审查大模型 · 全量破甲版 · OpenAI 兼容中转</text>
+  <text x="100" y="205" font-family="'Noto Sans SC','Microsoft YaHei',system-ui,sans-serif" font-size="30" font-weight="500" fill="#C9CEE8">国产无审查大模型 · 型号不带审查层 · OpenAI 兼容中转</text>
 
   <!-- chips -->
   <g font-family="Inter,'Segoe UI',system-ui,sans-serif" font-size="20" font-weight="600">

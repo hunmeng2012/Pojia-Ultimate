@@ -246,3 +246,4 @@ A：能，群里提供权重与部署脚本指引；懒得折腾就用中转站�
 [官网](https://www.hunmeng.icu/) · [QQ群](https://qm.qq.com/q/1109964876) · [推广文案包](./PROMO.md) · [接入指南](./docs/接入指南.md)
 
 </div>
+<!-- docs: updated 2026-11-08 -->
